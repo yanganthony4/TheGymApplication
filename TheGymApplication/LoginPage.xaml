@@ -11,8 +11,8 @@
         <Image Source="logo.png"
                HeightRequest="150" WidthRequest="150"/>
         <VerticalStackLayout Spacing="5">
-            <Label Text="Welcome!" FontSize="30" HorizontalTextAlignment="Center" />
-            <Label Text="Please Login:" FontSize="15" HorizontalTextAlignment="Center" />
+            <Label Text="Welcome!" FontSize="30" HorizontalTextAlignment="Center" TextColor="Black" />
+            <Label Text="Please Login:" FontSize="15" HorizontalTextAlignment="Center" TextColor="Black"/>
         </VerticalStackLayout>
         <Entry Placeholder="Username" 
                HorizontalOptions="Center" 

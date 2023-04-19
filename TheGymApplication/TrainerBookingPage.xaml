@@ -23,9 +23,9 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Image Source="trainer1.jpg" HeightRequest="150" WidthRequest="150" Grid.RowSpan="3"/>
-                    <Label Text="Keith John" FontSize="Large" FontAttributes="Bold" Grid.Row="0" Grid.Column="1"/>
-                    <Label Text="Description 1" FontSize="Medium" Grid.Row="1" Grid.Column="1"/>
-                    <Label Text="Trainer" FontSize="Medium" Grid.Row="2" Grid.Column="1"/>
+                    <Label Text="Keith John" FontSize="Large" FontAttributes="Bold" Grid.Row="0" Grid.Column="1" TextColor="Black"/>
+                    <Label Text="Description 1" FontSize="Medium" Grid.Row="1" Grid.Column="1" TextColor="Black"/>
+                    <Label Text="Trainer" FontSize="Medium" Grid.Row="2" Grid.Column="1" TextColor="Black"/>
                     <Button Text="Book" BackgroundColor="Black" Grid.Row="1" Grid.Column="2"></Button>
                 </Grid>
             </Frame>
@@ -43,9 +43,9 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Image Source="trainer2.jpg" HeightRequest="150" WidthRequest="150" Grid.RowSpan="3"/>
-                    <Label Text="Barry Owens" FontSize="Large" FontAttributes="Bold" Grid.Row="0" Grid.Column="1"/>
-                    <Label Text="Trainer" FontSize="Medium" Grid.Row="1" Grid.Column="1"/>
-                    <Label Text="Details 2" FontSize="Medium" Grid.Row="2" Grid.Column="1"/>
+                    <Label Text="Barry Owens" FontSize="Large" FontAttributes="Bold" Grid.Row="0" Grid.Column="1" TextColor="Black"/>
+                    <Label Text="Trainer" FontSize="Medium" Grid.Row="1" Grid.Column="1" TextColor="Black"/>
+                    <Label Text="Details 2" FontSize="Medium" Grid.Row="2" Grid.Column="1" TextColor="Black"/>
                     <Button Text="Book" BackgroundColor="Black" Grid.Row="1" Grid.Column="2"></Button>
                 </Grid>
             </Frame>
@@ -63,9 +63,9 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Image Source="trainer3.jpg" HeightRequest="150" WidthRequest="150" Grid.RowSpan="3"/>
-                    <Label Text="Reese Penny" FontSize="Large" FontAttributes="Bold" Grid.Row="0" Grid.Column="1"/>
-                    <Label Text="Trainer / Masseur" FontSize="Medium" Grid.Row="1" Grid.Column="1"/>
-                    <Label Text="Details 3" FontSize="Medium" Grid.Row="2" Grid.Column="1"/>
+                    <Label Text="Reese Penny" FontSize="Large" FontAttributes="Bold" Grid.Row="0" Grid.Column="1" TextColor="Black"/>
+                    <Label Text="Trainer / Masseur" FontSize="Medium" Grid.Row="1" Grid.Column="1" TextColor="Black"/>
+                    <Label Text="Details 3" FontSize="Medium" Grid.Row="2" Grid.Column="1" TextColor="Black"/>
                     <Button Text="Book" BackgroundColor="Black" Grid.Row="1" Grid.Column="2"></Button>
                 </Grid>
             </Frame>
@@ -83,9 +83,9 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Image Source="trainer4.jpg" HeightRequest="150" WidthRequest="150" Grid.RowSpan="3"/>
-                    <Label Text="Chad Bulwark" FontSize="Large" FontAttributes="Bold" Grid.Row="0" Grid.Column="1"/>
-                    <Label Text="Trainer / Masseur" FontSize="Medium" Grid.Row="1" Grid.Column="1"/>
-                    <Label Text="Details 3" FontSize="Medium" Grid.Row="2" Grid.Column="1"/>
+                    <Label Text="Chad Bulwark" FontSize="Large" FontAttributes="Bold" Grid.Row="0" Grid.Column="1" TextColor="Black"/>
+                    <Label Text="Trainer / Masseur" FontSize="Medium" Grid.Row="1" Grid.Column="1" TextColor="Black"/>
+                    <Label Text="Details 3" FontSize="Medium" Grid.Row="2" Grid.Column="1" TextColor="Black"/>
                     <Button Text="Book" BackgroundColor="Black" Grid.Row="1" Grid.Column="2"></Button>
                 </Grid>
             </Frame>
