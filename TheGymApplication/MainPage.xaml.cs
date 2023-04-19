@@ -7,6 +7,11 @@ public partial class MainPage : ContentPage
 	public MainPage()
 	{
 		InitializeComponent();
-	}
+        this.BindingContext = new VisitCountViewModel();
+    }
+    public class VisitCountViewModel
+    {
+        public int VisitCount { get; set; } = 42; // Example value
+    }
 }
 

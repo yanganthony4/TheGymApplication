@@ -20,25 +20,33 @@
 
         <Frame BackgroundColor="White" Margin="0,20,0,0" Grid.Row="2" CornerRadius="5" MaximumWidthRequest="500">
             <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Label Text="Visit Count:" FontSize="Medium" HorizontalOptions="Center" Grid.Column="1"/>
-                <Label Text="{Binding VisitCount}" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center" Grid.Column="1"/>
+                <Label Text="{Binding VisitCount}" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center" Grid.Column="1" Grid.Row="1"/>
             </Grid>
         </Frame>
 
         <Frame BackgroundColor="White" Margin="0,20,0,0" Grid.Row="3" CornerRadius="5" MaximumWidthRequest="500">
             <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Label Text="Visit Count:" FontSize="Medium" HorizontalOptions="Center" Grid.Column="1"/>
-                <Label Text="{Binding VisitCount}" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center" Grid.Column="1"/>
+                <Label Text="{Binding VisitCount}" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center" Grid.Column="1" Grid.Row="1"/>
             </Grid>
         </Frame>
     </Grid>

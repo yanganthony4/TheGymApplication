@@ -1,3 +1,4 @@
+using System;
 namespace TheGymApplication;
 
 public partial class LoginPage : ContentPage
