@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="TheGymApplication.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:TheGymApplication"
+    Shell.FlyoutBehavior="Disabled">
+
+    <ShellContent
+        Title="Login"
+        ContentTemplate="{DataTemplate local:LoginPage}"
+        Route="LoginPage" />
+
+    <TabBar Route="Home">
+        <Tab Title="Home">
+            <ShellContent
+                Title="Home" 
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="NewPage1"/>
+        </Tab>
+        <Tab Title="Schedule">
+            <ShellContent
+                Title="Schedule"
+                ContentTemplate="{DataTemplate local:FacilitySchedulePage}"
+                Route="Schedule"/>
+        </Tab>
+        <Tab Title="Trainers">
+            <ShellContent
+                Title="Trainers"
+                ContentTemplate="{DataTemplate local:TrainerBookingPage}"
+                Route="Trainers"/>
+        </Tab>
+    </TabBar>
+
+
+</Shell>
