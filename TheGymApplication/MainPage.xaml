@@ -30,7 +30,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Label Text="Visit Count:" FontSize="Medium" HorizontalOptions="Center" Grid.Column="1" TextColor="Black"/>
-                <Label Text="{Binding VisitCount}" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center" Grid.Column="1" Grid.Row="1" TextColor="Black"/>
+                <Label Text="{Binding FirstName}" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center" Grid.Column="1" Grid.Row="1" TextColor="Black"/>
             </Grid>
         </Frame>
 
