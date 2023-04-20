@@ -16,13 +16,13 @@ namespace TheGymApplication
 
             using (MySqlConnection connection = SingeltonConnection.Connection)
             {
-                MySqlCommand command = new MySqlCommand("SELECT FirstName FROM Trainers", connection);
+                MySqlCommand command = new MySqlCommand("SELECT  FROM TRAINERS", connection);
 
                 using (MySqlDataReader reader = command.ExecuteReader())
                 {
                     if (reader.Read())
                     {
-                        firstName = reader.GetString(0);
+                        
                     }
                 }
             }
