@@ -17,7 +17,6 @@ public partial class MainPage : ContentPage
 
         public BindingLabel() 
         {
-            FirstName = Trainers.GetFirstName();
         }
     }
 }

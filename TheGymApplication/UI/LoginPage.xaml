@@ -41,5 +41,8 @@
                 Grid.Row="3"
                 BackgroundColor="Black"
                 Clicked="OnLoginButtonClicked"/>
+        <Label Text="Incorrect Username/Password." 
+               IsVisible="{Binding IncorrectPasswordUser}" 
+               TextColor="Red"/>
     </VerticalStackLayout>
 </ContentPage>
