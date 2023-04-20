@@ -33,7 +33,7 @@ namespace TheGymApplication.Entities
 
             using (MySqlConnection connection = SingeltonConnection.Connection)
             {
-                MySqlCommand command = new MySqlCommand("SELECT * FROM CUSTOMERS", connection);
+                MySqlCommand command = new MySqlCommand("SELECT * FROM CUSTOMERS;", connection);
 
                 using (MySqlDataReader reader = command.ExecuteReader())
                 {
