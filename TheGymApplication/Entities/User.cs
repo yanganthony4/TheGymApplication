@@ -27,31 +27,39 @@ namespace TheGymApplication.Entities
         }
         public static List<User> PopulateUserList()
         {
-
             List<User> users_list = new List<User>();
-
 
             using (MySqlConnection connection = SingeltonConnection.Connection)
             {
-                MySqlCommand command = new MySqlCommand("SELECT * FROM CUSTOMERS;", connection);
-
-                using (MySqlDataReader reader = command.ExecuteReader())
+                string query = "SELECT * FROM CUSTOMERS";
+                using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
-                    while (reader.Read())
+                    using (MySqlDataReader reader = command.ExecuteReader())
                     {
-                        int userId = reader.GetInt32(0);
-                        string userFName = reader.GetString(1);
-                        string userLName = reader.GetString(2);
-                        string userEmail = reader.GetString(3);
-                        string userPassword = reader.GetString(4);
-                        int numberOfVisits = reader.GetInt32(5);
+                        while (reader.Read())
+                        {
+                            int userId = reader.GetInt32(0);
+                            string userFName = reader.GetString(1);
+                            string userLName = reader.GetString(2);
+                            string userEmail = reader.GetString(3);
+                            string userPassword = reader.GetString(4);
+                            int numberOfVisits = reader.GetInt32(5);
 
-                        User user = new User(userId, userFName, userLName, userEmail, userPassword, numberOfVisits);
-                        users_list.Add(user);
+                            User user = new User(userId, userFName, userLName, userEmail, userPassword, numberOfVisits);
+                            users_list.Add(user);
+
+                            bool done = string.IsNullOrEmpty(userEmail);
+
+                            if (done == true) { break; }
+
+                        }
+                        reader.Close();
                     }
-                    return users_list;
                 }
+                connection.Close();
             }
+            return users_list;
         }
     }
+    
 }

@@ -24,25 +24,30 @@ namespace TheGymApplication.Entities
             this.speciality = speciality;
         }
 
-        public static List<Trainers> PopulateTrainerData()
+        
+
+        public static string AddToSchedule1()
         {
-            List<Trainers> listtrainers = new List<Trainers>();
-            using (MySqlConnection connection = Connection)
+            try
             {
-                MySqlCommand command = new MySqlCommand("SELECT * FROM trainers", connection);
-                using (MySqlDataReader reader = command.ExecuteReader())
+                
                 {
-                    while (reader.Read())
-                    {
-                        int trainerId = reader.GetInt32(0);
-                        string fName = reader.GetString(1);
-                        string lName = reader.GetString(2);
-                        string speciality = reader.GetString(3);
-                        Trainers trainer = new Trainers(trainerId, fName, lName, speciality);
-                        listtrainers.Add(trainer);
-                    }
-                    return listtrainers;
+
+                    MySqlCommand command1 =  new MySqlCommand("INSERT INTO bookings (booking_id, trainer_id, customer_id, booking_time, booking_description) VALUES  (@Value1, @Value2, @Value3, @Value4, @Value5)");
+                    command1.Parameters.AddWithValue("@Value1", 1);
+                    command1.Parameters.AddWithValue("@Value2", 1);
+                    command1.Parameters.AddWithValue("@Value3", 1);
+                    command1.Parameters.AddWithValue("@Value4", "2-5pm");
+                    command1.Parameters.AddWithValue("@Value5", "Keith John");
+                    command1.ExecuteNonQuery();
                 }
+                
+                return "hello";
+            }
+            catch (Exception ex)
+            {
+                // handle the exception
+                return "Error: " + ex.Message;
             }
         }
     }
