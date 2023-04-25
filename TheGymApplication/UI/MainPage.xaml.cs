@@ -11,13 +11,19 @@ public partial class MainPage : ContentPage
         this.BindingContext = new BindingLabel();
     }
     public class BindingLabel
+    
+        
     {
+
         public string FirstName { get; set; }
-        public int VisitCount { get; set; } = 42; // Example value
+        public int VisitCount { get; set; }  // Example value
 
         public BindingLabel() 
         {
+            VisitCount = App.currentUser.numberOfVisits;
+
         }
+
     }
 }
 

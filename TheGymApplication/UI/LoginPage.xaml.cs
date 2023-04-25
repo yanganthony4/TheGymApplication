@@ -19,7 +19,9 @@ public partial class LoginPage : ContentPage
         {
             if (UsernameEntry.Text == user.userEmail || PasswordEntry.Text == user.userPassword)
             {
+                App.currentUser = user;
                 await Shell.Current.GoToAsync("//Home");
+                //await Shell.Current.GoToAsync($"//Home?userEmail={user.userEmail}&userFirstName={user.userFName}&userLastName={user.userLName}&userId={user.userId}&userNumberOfVisits={user.numberOfVisits}");
             } 
             else
             {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TheGymApplication.Entities
 {
-    internal class User
+    public class User
     {
         public int userId { get; set; }
         public string userFName { get; set; }
