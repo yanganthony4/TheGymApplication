@@ -28,37 +28,46 @@ namespace TheGymApplication.Entities
         public static List<User> PopulateUserList() //Populating all users in the database as objects in a list
         {
             List<User> users_list = new List<User>();
-
-            using (MySqlConnection connection = SingeltonConnection.Connection)
+            try
             {
-                string query = "SELECT * FROM CUSTOMERS";
-                using (MySqlCommand command = new MySqlCommand(query, connection))
+                using (MySqlConnection connection = SingeltonConnection.Connection)
                 {
-                    using (MySqlDataReader reader = command.ExecuteReader())
+                    string query = "SELECT * FROM CUSTOMERS";
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
-                        while (reader.Read())
+                        using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            int userId = reader.GetInt32(0);
-                            string userFName = reader.GetString(1);
-                            string userLName = reader.GetString(2);
-                            string userEmail = reader.GetString(3);
-                            string userPassword = reader.GetString(4);
-                            int numberOfVisits = reader.GetInt32(5);
+                            while (reader.Read())
+                            {
+                                int userId = reader.GetInt32(0);
+                                string userFName = reader.GetString(1);
+                                string userLName = reader.GetString(2);
+                                string userEmail = reader.GetString(3);
+                                string userPassword = reader.GetString(4);
+                                int numberOfVisits = reader.GetInt32(5);
 
-                            User user = new User(userId, userFName, userLName, userEmail, userPassword, numberOfVisits);
-                            users_list.Add(user);
+                                User user = new User(userId, userFName, userLName, userEmail, userPassword, numberOfVisits);
+                                users_list.Add(user);
 
-                            bool done = string.IsNullOrEmpty(userEmail);
+                                bool done = string.IsNullOrEmpty(userEmail);
 
-                            if (done == true) { break; }
+                                if (done == true) { break; }
 
+                            }
+                            reader.Close();
                         }
-                        reader.Close();
                     }
+                    connection.Close();
                 }
-                connection.Close();
+                return users_list;
             }
-            return users_list;
+            catch (MySqlException ex)
+            {
+
+                Console.WriteLine(ex.Message);
+                return users_list;
+            }
+
         }
     }
     
