@@ -16,7 +16,7 @@ namespace TheGymApplication.Entities
         public string bookingDescription { get; set; }
 
 
-        public Bookings(int bookingId, int trainerId, int customerId, string bookingTime, string bookingDescription)
+        public Bookings(int bookingId, int trainerId, int customerId, string bookingTime, string bookingDescription) //Constructor for booking object
         {
             this.bookingId = bookingId;
             this.trainerId = trainerId;
@@ -24,54 +24,53 @@ namespace TheGymApplication.Entities
             this.bookingTime = bookingTime;
             this.bookingDescription = bookingDescription;
         }
-        public static List<Bookings> PopulateBookingList()
+        public static List<Bookings> PopulateBookingList()  //Populates all rows in bookings table as objects in a list
         {
-            List<Bookings> bookings_list = new List<Bookings>()
-
-
-            using (MySqlConnection connection = SingeltonConnection.Connection)
+            List<Bookings> bookings_list = new List<Bookings>();
+            using (MySqlConnection connection = Connection)
                 {
-                string query = "SELECT * FROM BOOKINGS";
-                using (MySqlCommand command = new MySqlCommand(query, connection))
+                    string query = "SELECT * FROM BOOKINGS";
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
-                    using (MySqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
+                        using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            bookingId = reader.GetInt32(0);
-                            trainingId = reader.GetInt32(1);
-                            customerId = reader.GetInt32(2);
-                            bookingTime= reader.GetString(3);
-                            bookingDescription= reader.GetString(4);
+                            while (reader.Read())
+                            {
+                            int bookingId = reader.GetInt32(0);
+                            int trainingId = reader.GetInt32(1);
+                            int customerId = reader.GetInt32(2);
+                            string bookingTime= reader.GetString(3);
+                            string bookingDescription= reader.GetString(4);
 
                             Bookings bookings = new Bookings(bookingId, trainingId, customerId, bookingTime, bookingDescription);
                             bookings_list.Add(bookings);                         
                         }
                     }
                 }
+                return bookings_list;
             }
         }
 
 
-        public static List<Bookings> PopulateBookingData()
-        {
-            List<Bookings> listbooking = new List<Bookings>();
-            MySqlConnection connection = Connection;
-            MySqlCommand command = new MySqlCommand("SELECT * FROM bookings", connection);
-            using (MySqlDataReader reader = command.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    int bookingId = reader.GetInt32(0);
-                    int trainerId = reader.GetInt32(1);
-                    string bookingDate = reader.GetString(2);
-                    int bookingLength = reader.GetInt32(3);
-                    Bookings booking = new Bookings(bookingId, trainerId, bookingDate, bookingLength);
-                    listbooking.Add(booking);
-                }
-                return listbooking;
-            }
-        }
+        //public static List<Bookings> PopulateBookingData()
+        //{
+        //    List<Bookings> listbooking = new List<Bookings>();
+        //    MySqlConnection connection = Connection;
+        //    MySqlCommand command = new MySqlCommand("SELECT * FROM bookings", connection);
+        //    using (MySqlDataReader reader = command.ExecuteReader())
+        //    {
+        //        while (reader.Read())
+        //        {
+        //            int bookingId = reader.GetInt32(0);
+        //            int trainerId = reader.GetInt32(1);
+        //            string bookingDate = reader.GetString(2);
+        //            int bookingLength = reader.GetInt32(3);
+        //            Bookings booking = new Bookings(bookingId, trainerId, bookingDate, bookingLength);
+        //            listbooking.Add(booking);
+        //        }
+        //        return listbooking;
+        //    }
+        //}
 
 
     }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TheGymApplication.Entities
 {
-    public class User
+    public class User //Constructor for user object
     {
         public int userId { get; set; }
         public string userFName { get; set; }
@@ -16,7 +16,7 @@ namespace TheGymApplication.Entities
         public string userPassword { get; set; }
         public int numberOfVisits { get; set; }
 
-        public User(int userId, string userFName, string userLName, string userEmail, string userPassword, int numberOfVisits)
+        public User(int userId, string userFName, string userLName, string userEmail, string userPassword, int numberOfVisits) //Constructing specific user 
         {
             this.userId = userId;
             this.userFName = userFName;
@@ -25,7 +25,7 @@ namespace TheGymApplication.Entities
             this.userPassword = userPassword;
             this.numberOfVisits = numberOfVisits;
         }
-        public static List<User> PopulateUserList()
+        public static List<User> PopulateUserList() //Populating all users in the database as objects in a list
         {
             List<User> users_list = new List<User>();
 

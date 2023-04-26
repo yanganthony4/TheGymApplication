@@ -13,7 +13,7 @@ public partial class LoginPage : ContentPage
         IncorrectPasswordUser = false;
 	}
 
-    private async void OnLoginButtonClicked(object sender, EventArgs e)
+    private async void OnLoginButtonClicked(object sender, EventArgs e) //Checks if user input matches username and password in database
     {
         
         foreach (User user in users_list)

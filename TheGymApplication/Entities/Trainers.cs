@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySqlConnector;
-
+// THIS CLASS IS NOT RELAVENT TO THE CODE. DO NOT USE
 namespace TheGymApplication.Entities
 {
 
@@ -16,7 +16,7 @@ namespace TheGymApplication.Entities
         public string lName { get; set; }
         public string speciality { get; set; }
 
-        public Trainers(int trainerId, string fName, string lName, string speciality)
+        public Trainers(int trainerId, string fName, string lName, string speciality) //Constructs for creating trainer object
         {
             this.trainerId = trainerId;
             this.fName = fName;
@@ -26,7 +26,7 @@ namespace TheGymApplication.Entities
 
         
 
-        public static string AddToSchedule1()
+        public static string AddToSchedule1()  
         {
             try
             {

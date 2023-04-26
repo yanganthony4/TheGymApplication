@@ -9,7 +9,7 @@ namespace TheGymApplication.Entities
 {
     internal class Book
     {
-        public static string AddToSchedule1()
+        public static string AddToSchedule1() // Code following populates booking database for trainer 1
         {
             MySqlConnection con = SingeltonConnection.Connection;
 
@@ -21,21 +21,10 @@ namespace TheGymApplication.Entities
             command1.Parameters.AddWithValue("@Value5", "Keith John");
             command1.ExecuteNonQuery();
 
-            //using var cmd = con.CreateCommand();
-            //cmd.CommandText = "select * from bookings";
-            //var reader = cmd.ExecuteReader();
-            //do
-            //{
-            //    while (reader.Read())
-            //    {
-            //        Console.WriteLine("RESULT: " + reader.GetString(4));
-            //    }
-            //} while (reader.NextResult());
-
             return "hello";
 
         }
-        public static string AddToSchedule2()
+        public static string AddToSchedule2()// Code following populates booking database for trainer 2
         {
 
             MySqlConnection con = SingeltonConnection.Connection;
@@ -52,7 +41,7 @@ namespace TheGymApplication.Entities
             
             
         }
-        public static string AddToSchedule3()
+        public static string AddToSchedule3()// Code following populates booking database for trainer 3
         {
 
             MySqlConnection con = SingeltonConnection.Connection;
@@ -69,7 +58,7 @@ namespace TheGymApplication.Entities
 
 
         }
-        public static string AddToSchedule4()
+        public static string AddToSchedule4()// Code following populates booking database for trainer 4
         {
 
             MySqlConnection con = SingeltonConnection.Connection;

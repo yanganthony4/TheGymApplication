@@ -9,7 +9,7 @@ namespace TheGymApplication
 {
     public class SingeltonConnection
     {
-        public static MySqlConnection Connection
+        public static MySqlConnection Connection // Opens connection from SQL to C# code in Visual Studio
         {
             get
             { 
