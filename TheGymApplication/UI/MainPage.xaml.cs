@@ -15,14 +15,16 @@ public partial class MainPage : ContentPage
         
     {
 
-        public string FirstName { get; set; }
-        public int VisitCount { get; set; }  // Example value
+        public string BookingInfo { get; set; }
+        public int VisitCount { get; set; }  
 
         public BindingLabel() 
         {
+            
             VisitCount = App.currentUser.numberOfVisits;
 
         }
+        
 
     }
 }

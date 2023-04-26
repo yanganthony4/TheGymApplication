@@ -47,7 +47,7 @@
                     <Label Text="Barry Owens" FontSize="Large" FontAttributes="Bold" Grid.Row="0" Grid.Column="1" TextColor="Black"/>
                     <Label Text=" Specialty:Trainer" FontSize="Medium" Grid.Row="1" Grid.Column="1" TextColor="Black"/>
                     <Label Text="Wednesday 10-6 pm" FontSize="Medium" Grid.Row="2" Grid.Column="1" TextColor="Black"/>
-                    <Button Text="Book" BackgroundColor="Black" Grid.Row="1" Grid.Column="2"></Button>
+                    <Button Text="Book" BackgroundColor="Black" Grid.Row="1" Grid.Column="2" Clicked="TrainerClicked2"></Button>
                 </Grid>
             </Frame>
 
@@ -67,7 +67,7 @@
                     <Label Text="Reese Penny" FontSize="Large" FontAttributes="Bold" Grid.Row="0" Grid.Column="1" TextColor="Black"/>
                     <Label Text=" Specialty:Trainer / Masseur" FontSize="Medium" Grid.Row="1" Grid.Column="1" TextColor="Black"/>
                     <Label Text="Tuesday 10-3 pm" FontSize="Medium" Grid.Row="2" Grid.Column="1" TextColor="Black"/>
-                    <Button Text="Book" BackgroundColor="Black" Grid.Row="1" Grid.Column="2"></Button>
+                    <Button Text="Book" BackgroundColor="Black" Grid.Row="1" Grid.Column="2" Clicked="TrainerClicked3"></Button>
                 </Grid>
             </Frame>
 
@@ -87,7 +87,7 @@
                     <Label Text="Chad Bulwark" FontSize="Large" FontAttributes="Bold" Grid.Row="0" Grid.Column="1" TextColor="Black"/>
                     <Label Text="Specialty: Trainer / Masseur" FontSize="Medium" Grid.Row="1" Grid.Column="1" TextColor="Black"/>
                     <Label Text="Friday 7-2 pm" FontSize="Medium" Grid.Row="2" Grid.Column="1" TextColor="Black"/>
-                    <Button Text="Book" BackgroundColor="Black" Grid.Row="1" Grid.Column="2"></Button>
+                    <Button Text="Book" BackgroundColor="Black" Grid.Row="1" Grid.Column="2" Clicked="TrainerClicked4"></Button>
                 </Grid>
             </Frame>
         </StackLayout>

@@ -11,17 +11,47 @@ namespace TheGymApplication.Entities
     {
         public int bookingId { get; set; }
         public int trainerId { get; set; }
-        public string bookingDate { get; set; }
-        public int bookingLength { get; set; }
+        public int customerId { get; set; }
+        public string bookingTime { get; set; }
+        public string bookingDescription { get; set; }
 
 
-        public Bookings(int bookingId, int trainerId, string bookingDate, int bookingLength)
+        public Bookings(int bookingId, int trainerId, int customerId, string bookingTime, string bookingDescription)
         {
             this.bookingId = bookingId;
             this.trainerId = trainerId;
-            this.bookingDate = bookingDate;
-            this.bookingLength = bookingLength;
+            this.customerId = customerId;
+            this.bookingTime = bookingTime;
+            this.bookingDescription = bookingDescription;
         }
+        public static List<Bookings> PopulateBookingList()
+        {
+            List<Bookings> bookings_list = new List<Bookings>()
+
+
+            using (MySqlConnection connection = SingeltonConnection.Connection)
+                {
+                string query = "SELECT * FROM BOOKINGS";
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            bookingId = reader.GetInt32(0);
+                            trainingId = reader.GetInt32(1);
+                            customerId = reader.GetInt32(2);
+                            bookingTime= reader.GetString(3);
+                            bookingDescription= reader.GetString(4);
+
+                            Bookings bookings = new Bookings(bookingId, trainingId, customerId, bookingTime, bookingDescription);
+                            bookings_list.Add(bookings);                         
+                        }
+                    }
+                }
+            }
+        }
+
 
         public static List<Bookings> PopulateBookingData()
         {
