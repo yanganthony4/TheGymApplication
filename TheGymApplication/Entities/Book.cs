@@ -1,4 +1,5 @@
-﻿using MySqlConnector;
+﻿
+using MySqlConnector;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -75,6 +76,13 @@ namespace TheGymApplication.Entities
 
 
         }
+        public static string ClearBookings() // Clear bookings table for new user
+        {
+            MySqlConnection con = SingeltonConnection.Connection;
 
+            MySqlCommand command1 = new MySqlCommand("DELETE FROM bookings", con);
+            command1.ExecuteNonQuery();
+            return "hello";
+        }
     }
 }

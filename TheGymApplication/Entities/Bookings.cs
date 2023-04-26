@@ -50,6 +50,15 @@ namespace TheGymApplication.Entities
                 return bookings_list;
             }
         }
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+            Bookings other = (Bookings)obj;
+            return bookingDescription == other.bookingDescription && bookingTime == other.bookingTime;
+        }
 
 
         //public static List<Bookings> PopulateBookingData()
