@@ -13,7 +13,7 @@ public partial class TrainerBookingPage : ContentPage
 	}
 	public void TrainerClicked1(object sender, EventArgs e)
 	{
-		Trainers.AddToSchedule1();
+		Book.AddToSchedule1();
 
     }
 }

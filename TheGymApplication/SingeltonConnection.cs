@@ -9,24 +9,20 @@ namespace TheGymApplication
 {
     public class SingeltonConnection
     {
-        private static MySqlConnection _connection;
         public static MySqlConnection Connection
         {
             get
-            {
-                if (_connection == null)
+            { 
+                MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder()
                 {
-                    MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder()
-                    {
-                        Server = "localhost",
-                        UserID = "root",
-                        Password = "password",
-                        Database = "thegymdb"
-                    };
+                    Server = "localhost",
+                    UserID = "root",
+                    Password = "password",
+                    Database = "thegymdb"
+                };
 
-                    _connection = new MySqlConnection(builder.ConnectionString);
-                    _connection.Open();
-                }
+                var _connection = new MySqlConnection(builder.ConnectionString);
+                _connection.Open();
                 return _connection;
             }
         }

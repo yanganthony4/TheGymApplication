@@ -26,22 +26,20 @@ namespace TheGymApplication.Entities
         public static List<Bookings> PopulateBookingData()
         {
             List<Bookings> listbooking = new List<Bookings>();
-            using (MySqlConnection connection = Connection)
+            MySqlConnection connection = Connection;
+            MySqlCommand command = new MySqlCommand("SELECT * FROM bookings", connection);
+            using (MySqlDataReader reader = command.ExecuteReader())
             {
-                MySqlCommand command = new MySqlCommand("SELECT * FROM bookings", connection);
-                using (MySqlDataReader reader = command.ExecuteReader())
+                while (reader.Read())
                 {
-                    while (reader.Read())
-                    {
-                        int bookingId = reader.GetInt32(0);
-                        int trainerId = reader.GetInt32(1);
-                        string bookingDate = reader.GetString(2);
-                        int bookingLength = reader.GetInt32(3);
-                        Bookings booking = new Bookings(bookingId, trainerId, bookingDate, bookingLength);
-                        listbooking.Add(booking);
-                    }
-                    return listbooking;
+                    int bookingId = reader.GetInt32(0);
+                    int trainerId = reader.GetInt32(1);
+                    string bookingDate = reader.GetString(2);
+                    int bookingLength = reader.GetInt32(3);
+                    Bookings booking = new Bookings(bookingId, trainerId, bookingDate, bookingLength);
+                    listbooking.Add(booking);
                 }
+                return listbooking;
             }
         }
 

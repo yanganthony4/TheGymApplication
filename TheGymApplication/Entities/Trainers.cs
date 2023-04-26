@@ -30,17 +30,14 @@ namespace TheGymApplication.Entities
         {
             try
             {
-                
-                {
-
-                    MySqlCommand command1 =  new MySqlCommand("INSERT INTO bookings (booking_id, trainer_id, customer_id, booking_time, booking_description) VALUES  (@Value1, @Value2, @Value3, @Value4, @Value5)");
-                    command1.Parameters.AddWithValue("@Value1", 1);
-                    command1.Parameters.AddWithValue("@Value2", 1);
-                    command1.Parameters.AddWithValue("@Value3", 1);
-                    command1.Parameters.AddWithValue("@Value4", "2-5pm");
-                    command1.Parameters.AddWithValue("@Value5", "Keith John");
-                    command1.ExecuteNonQuery();
-                }
+                using MySqlConnection connection1 = Connection;
+                MySqlCommand command1 = new MySqlCommand("INSERT INTO bookings (booking_id, trainer_id, customer_id, booking_time, booking_description) VALUES  (@Value1, @Value2, @Value3, @Value4, @Value5)", connection1);
+                command1.Parameters.AddWithValue("@Value1", 1);
+                command1.Parameters.AddWithValue("@Value2", 1);
+                command1.Parameters.AddWithValue("@Value3", 1);
+                command1.Parameters.AddWithValue("@Value4", "2-5pm");
+                command1.Parameters.AddWithValue("@Value5", "Keith John");
+                command1.ExecuteNonQuery();
                 
                 return "hello";
             }
